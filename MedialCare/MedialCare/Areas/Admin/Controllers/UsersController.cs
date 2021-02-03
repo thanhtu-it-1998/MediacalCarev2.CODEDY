@@ -92,22 +92,6 @@ namespace MedialCare.Areas.Admin.Controllers
             return View(user);
         }
 
-        // GET: Admin/Users/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-            return View(user);
-        }
-
 
         // GET: Admin/Users/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -119,6 +103,24 @@ namespace MedialCare.Areas.Admin.Controllers
 
             var user = await _context.Users
                 .FirstOrDefaultAsync(m => m.ID == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
+
+
+
+        // GET: Admin/Users/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -159,7 +161,7 @@ namespace MedialCare.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ID"] = new SelectList(_context.Users, "ID", "Level", user.ID);
+            ViewData["ID"] = new SelectList(_context.Users, "ID", "Level");
             return View(user);
         }
 
