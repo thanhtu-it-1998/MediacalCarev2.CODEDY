@@ -36,10 +36,11 @@
                         </div>
                     </li>
                 </ul>
-                <div class="m-2">
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.ID">Delete</a>
-                    <a class="btn btn-success" asp-action="Index">Back to List</a>
-                </div>
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="ID" />
+                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                    <a asp-action="Index" class="btn btn-success">Back to List</a>
+                </form>
             </div>
 
         </div>
