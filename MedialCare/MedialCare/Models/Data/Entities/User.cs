@@ -22,6 +22,7 @@ namespace MedialCare.Models.Entities
 
         public string Designation { get; set; }
 
+        [Display( Name ="BOD")]
         public DateTime JoinDate { get; set; }
 
         [Column(TypeName = "Decimal(8,2)")]

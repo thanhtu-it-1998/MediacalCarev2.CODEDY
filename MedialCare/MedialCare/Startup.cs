@@ -1,6 +1,7 @@
 using MedialCare.Models.EF;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +28,15 @@ namespace MedialCare
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MedialCareDbConnect")));
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddRazorPages();
+
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(1);
+            });
+
             services.AddControllersWithViews();
         }
 
@@ -48,6 +58,11 @@ namespace MedialCare
 
             app.UseRouting();
 
+            app.UseSession();
+
+            app.UseAuthorization();
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -56,6 +71,11 @@ namespace MedialCare
                     name: "MyAreaAdmin",
                     areaName: "Admin",
                     pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapAreaControllerRoute(
+                   name: "MyAreaAccount",
+                   areaName: "Account",
+                   pattern: "Account/{controller=Login}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
                     name: "default",
