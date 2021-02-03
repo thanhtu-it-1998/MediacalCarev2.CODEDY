@@ -43,7 +43,23 @@ namespace MedialCare.Models.Extensions
                     Level = Level.Employee,
                     Phone = "0367376544",
                     Salary = 254
-                }
+                },
+                 new User()
+                 {
+                     ID = 3,
+                     FirstName = "Quang Huy",
+                     LastName = "Vu",
+                     Address = "Linh Dam, Ha Noi",
+                     Username = "vuquanghuy",
+                     Password = "123456",
+                     Designation = "Developer",
+                     Email = "vuquanghuy@gmail.com",
+                     Gender = Gender.Male,
+                     JoinDate = DateTime.Parse("16-02-2001"),
+                     Level = Level.Admin,
+                     Phone = "98372837362",
+                     Salary = 265
+                 }
                 );
             modelBuilder.Entity<Company>().HasData(
 
