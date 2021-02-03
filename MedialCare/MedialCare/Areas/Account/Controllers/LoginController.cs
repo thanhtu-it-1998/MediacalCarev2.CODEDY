@@ -45,6 +45,10 @@ namespace MedialCare.Areas.Account.Controllers
                     {
                         return RedirectToAction("Index", "Home", new { area = "Admin" });
                     }
+                    else
+                    {
+                        return RedirectToPage("Home","Index");
+                    }
                 }
                 else
                     ModelState.AddModelError("", "Login feild. Please enter user and password");

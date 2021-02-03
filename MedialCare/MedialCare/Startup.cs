@@ -76,6 +76,11 @@ namespace MedialCare
                    name: "MyAreaAccount",
                    areaName: "Account",
                    pattern: "Account/{controller=Login}/{action=Index}/{id?}");
+                
+                endpoints.MapAreaControllerRoute(
+                   name: "MyAreaAccount",
+                   areaName: "Account",
+                   pattern: "Account/{controller=Logout}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
                     name: "default",

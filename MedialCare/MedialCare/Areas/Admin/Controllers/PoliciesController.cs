@@ -8,11 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using MedialCare.Models.EF;
 using MedialCare.Models.Entities;
 using MedialCare.Models.Catalog;
+using MedialCare.Areas.Account.Controllers;
 
 namespace MedialCare.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class PoliciesController : Controller
+    public class PoliciesController : BaseController
     {
         private readonly ApplicationDbContext _context;
         public int PageSize = 5;
