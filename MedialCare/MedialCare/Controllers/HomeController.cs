@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MedialCare.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
 
