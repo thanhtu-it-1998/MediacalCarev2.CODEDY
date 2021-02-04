@@ -2,123 +2,257 @@
     ViewData["Title"] = "Home Page";
 }
 
+
 <div class="xs-pd-20-10 pd-ltr-20">
-    <div class="page-header">
-        <div class="row">
-            <div class="col-md-6 col-sm-12">
-                <div class="title">
-                    <h4>Home</h4>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 text-right">
-                <div class="dropdown">
-                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                        January 2018
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Export List</a>
-                        <a class="dropdown-item" href="#">Policies</a>
-                        <a class="dropdown-item" href="#">View Assets</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <div class="card-box pb-10">
+        <div class="h5 pd-20 mb-0">Recent Patient</div>
+        <table class="data-table table nowrap">
+            <thead>
+                <tr>
+                    <th class="table-plus">Name</th>
+                    <th>Gender</th>
+                    <th>Weight</th>
+                    <th>Assigned Doctor</th>
+                    <th>Admit Date</th>
+                    <th>Disease</th>
+                    <th class="datatable-nosort">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="table-plus">
+                        <div class="name-avatar d-flex align-items-center">
+                            <div class="avatar mr-2 flex-shrink-0">
+                                <img src="~/assets/admin/vendors/images/photo4.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
+                            </div>
+                            <div class="txt">
+                                <div class="weight-600">Jennifer O. Oster</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Female</td>
+                    <td>45 kg</td>
+                    <td>Dr. Callie Reed</td>
+                    <td>19 Oct 2020</td>
+                    <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Typhoid</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
+                            <a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-plus">
+                        <div class="name-avatar d-flex align-items-center">
+                            <div class="avatar mr-2 flex-shrink-0">
+                                <img src="~/assets/admin/vendors/images/photo5.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
+                            </div>
+                            <div class="txt">
+                                <div class="weight-600">Doris L. Larson</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Male</td>
+                    <td>76 kg</td>
+                    <td>Dr. Ren Delan</td>
+                    <td>22 Jul 2020</td>
+                    <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Dengue</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
+                            <a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-plus">
+                        <div class="name-avatar d-flex align-items-center">
+                            <div class="avatar mr-2 flex-shrink-0">
+                                <img src="~/assets/admin/vendors/images/photo6.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
+                            </div>
+                            <div class="txt">
+                                <div class="weight-600">Joseph	Powell</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Male</td>
+                    <td>90 kg</td>
+                    <td>Dr. Allen Hannagan</td>
+                    <td>15 Nov 2020</td>
+                    <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Infection</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
+                            <a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-plus">
+                        <div class="name-avatar d-flex align-items-center">
+                            <div class="avatar mr-2 flex-shrink-0">
+                                <img src="~/assets/admin/vendors/images/photo9.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
+                            </div>
+                            <div class="txt">
+                                <div class="weight-600">Jake Springer</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Female</td>
+                    <td>45 kg</td>
+                    <td>Dr. Garrett Kincy</td>
+                    <td>08 Oct 2020</td>
+                    <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Covid 19</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
+                            <a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-plus">
+                        <div class="name-avatar d-flex align-items-center">
+                            <div class="avatar mr-2 flex-shrink-0">
+                                <img src="~/assets/admin/vendors/images/photo1.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
+                            </div>
+                            <div class="txt">
+                                <div class="weight-600">Paul Buckland</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Male</td>
+                    <td>76 kg</td>
+                    <td>Dr. Maxwell Soltes</td>
+                    <td>12 Dec 2020</td>
+                    <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Asthma</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
+                            <a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-plus">
+                        <div class="name-avatar d-flex align-items-center">
+                            <div class="avatar mr-2 flex-shrink-0">
+                                <img src="~/assets/admin/vendors/images/photo2.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
+                            </div>
+                            <div class="txt">
+                                <div class="weight-600">Neil Arnold</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Male</td>
+                    <td>60 kg</td>
+                    <td>Dr. Sebastian Tandon</td>
+                    <td>30 Oct 2020</td>
+                    <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Diabetes</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
+                            <a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-plus">
+                        <div class="name-avatar d-flex align-items-center">
+                            <div class="avatar mr-2 flex-shrink-0">
+                                <img src="~/assets/admin/vendors/images/photo8.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
+                            </div>
+                            <div class="txt">
+                                <div class="weight-600">Christian Dyer</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Male</td>
+                    <td>80 kg</td>
+                    <td>Dr. Sebastian Tandon</td>
+                    <td>15 Jun 2020</td>
+                    <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Diabetes</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
+                            <a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-plus">
+                        <div class="name-avatar d-flex align-items-center">
+                            <div class="avatar mr-2 flex-shrink-0">
+                                <img src="~/assets/admin/vendors/images/photo1.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
+                            </div>
+                            <div class="txt">
+                                <div class="weight-600">Doris L. Larson</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Male</td>
+                    <td>76 kg</td>
+                    <td>Dr. Ren Delan</td>
+                    <td>22 Jul 2020</td>
+                    <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Dengue</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
+                            <a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <div class="row clearfix progress-box">
-        <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-            <div class="card-box pd-30 height-100-p">
-                <div class="progress-box text-center">
-                    <input type="text" class="knob dial1" value="80" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#1b00ff" data-angleOffset="180" readonly>
-                    <h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-                    <span class="d-block">80% Average <i class="fa fa-line-chart text-blue"></i></span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-            <div class="card-box pd-30 height-100-p">
-                <div class="progress-box text-center">
-                    <input type="text" class="knob dial2" value="70" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#00e091" data-angleOffset="180" readonly>
-                    <h5 class="text-light-green padding-top-10 h5">Business Captured</h5>
-                    <span class="d-block">75% Average <i class="fa text-light-green fa-line-chart"></i></span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-            <div class="card-box pd-30 height-100-p">
-                <div class="progress-box text-center">
-                    <input type="text" class="knob dial3" value="90" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#f56767" data-angleOffset="180" readonly>
-                    <h5 class="text-light-orange padding-top-10 h5">Projects Speed</h5>
-                    <span class="d-block">90% Average <i class="fa text-light-orange fa-line-chart"></i></span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-            <div class="card-box pd-30 height-100-p">
-                <div class="progress-box text-center">
-                    <input type="text" class="knob dial4" value="65" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#a683eb" data-angleOffset="180" readonly>
-                    <h5 class="text-light-purple padding-top-10 h5">Panding Orders</h5>
-                    <span class="d-block">65% Average <i class="fa text-light-purple fa-line-chart"></i></span>
-                </div>
-            </div>
-        </div>
+
+    <div class="title pb-20 pt-20">
+        <h2 class="h3 mb-0">Quick Start</h2>
     </div>
+
     <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
-            <div class="card-box pd-30 pt-10 height-100-p">
-                <h2 class="mb-30 h4">Browser Visit</h2>
-                <div class="browser-visits">
-                    <ul>
-                        <li class="d-flex flex-wrap align-items-center">
-                            <div class="icon"><img src="assets/admin/vendors/images/chrome.png" alt=""></div>
-                            <div class="browser-name">Google Chrome</div>
-                            <div class="visit"><span class="badge badge-pill badge-primary">50%</span></div>
-                        </li>
-                        <li class="d-flex flex-wrap align-items-center">
-                            <div class="icon"><img src="assets/admin/vendors/images/firefox.png" alt=""></div>
-                            <div class="browser-name">Mozilla Firefox</div>
-                            <div class="visit"><span class="badge badge-pill badge-secondary">40%</span></div>
-                        </li>
-                        <li class="d-flex flex-wrap align-items-center">
-                            <div class="icon"><img src="assets/admin/vendors/images/safari.png" alt=""></div>
-                            <div class="browser-name">Safari</div>
-                            <div class="visit"><span class="badge badge-pill badge-success">40%</span></div>
-                        </li>
-                        <li class="d-flex flex-wrap align-items-center">
-                            <div class="icon"><img src="assets/admin/vendors/images/edge.png" alt=""></div>
-                            <div class="browser-name">Microsoft Edge</div>
-                            <div class="visit"><span class="badge badge-pill badge-warning">20%</span></div>
-                        </li>
-                        <li class="d-flex flex-wrap align-items-center">
-                            <div class="icon"><img src="assets/admin/vendors/images/opera.png" alt=""></div>
-                            <div class="browser-name">Opera Mini</div>
-                            <div class="visit"><span class="badge badge-pill badge-info">20%</span></div>
-                        </li>
-                    </ul>
+        <div class="col-md-4 mb-20">
+            <a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
+                <div class="img pb-30">
+                    <img src="~/assets/admin/vendors/images/medicine-bro.svg" alt="">
                 </div>
-            </div>
+                <div class="content">
+                    <h3 class="h4">Services</h3>
+                    <p class="max-width-200 ">We provide superior health care in a compassionate maner</p>
+                </div>
+            </a>
         </div>
-        <div class="col-lg-8 col-md-6 col-sm-12 mb-30">
-            <div class="card-box pd-30 pt-10 height-100-p">
-                <h2 class="mb-30 h4">World Map</h2>
-                <div id="browservisit" style="width:100%!important; height:380px"></div>
-            </div>
+        <div class="col-md-4 mb-20">
+            <a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
+                <div class="img pb-30">
+                    <img src="~/assets/admin/vendors/images/remedy-amico.svg" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="h4">Medications</h3>
+                    <p class="max-width-200 ">Look for prescription and over-the-counter drug information.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 mb-20">
+            <a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
+                <div class="img pb-30">
+                    <img src="~/assets/admin/vendors/images/paper-map-cuate.svg" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="h4">Locations</h3>
+                    <p class="max-width-200 ">Convenient locations when and where you need them.</p>
+                </div>
+            </a>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-7 col-md-12 col-sm-12 mb-30">
-            <div class="card-box pd-30 height-100-p">
-                <h4 class="mb-30 h4">Compliance Trend</h4>
-                <div id="compliance-trend" class="compliance-trend"></div>
-            </div>
-        </div>
-        <div class="col-lg-5 col-md-12 col-sm-12 mb-30">
-            <div class="card-box pd-30 height-100-p">
-                <h4 class="mb-30 h4">Records</h4>
-                <div id="chart" class="chart"></div>
-            </div>
-        </div>
-    </div>
+
     <div class="footer-wrap pd-20 mb-20 card-box">
-        Copyright © 2020 by <a asp-controller="home" asp-action="index">Medical Care</a>. All right reserved.
+        DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
     </div>
+</div>
+
+<div class="footer-wrap pd-20 mb-20 card-box">
+    Copyright © 2020 by <a asp-controller="home" asp-action="index">Medical Care</a>. All right reserved.
 </div>
