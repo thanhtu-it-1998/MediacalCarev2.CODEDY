@@ -13,7 +13,7 @@ using MedialCare.Areas.Account.Controllers;
 namespace MedialCare.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class UsersController : BaseController
+    public class UsersController : Controller
     {
         private readonly ApplicationDbContext _context;
         public int PageSize = 5;

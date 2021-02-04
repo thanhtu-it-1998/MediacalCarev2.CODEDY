@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MedialCare.Areas.Admin.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
         [Area("Admin")]
         public IActionResult Index()
