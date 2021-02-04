@@ -93,6 +93,10 @@ namespace MedialCare.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            else
+            {
+                ModelState.AddModelError("", "Create fleided. Please enter value in input");
+            }
             ViewData["CompanyId"] = new SelectList(_context.Companys, "ID", "Name", policy.CompanyId);
             return View(policy);
         }

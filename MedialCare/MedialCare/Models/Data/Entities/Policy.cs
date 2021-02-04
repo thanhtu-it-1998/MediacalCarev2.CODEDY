@@ -16,13 +16,19 @@ namespace MedialCare.Models.Entities
         [Display(Name ="Name Company")]
         public int CompanyId { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
+        [Range(1, 9999, ErrorMessage = "correlativo no valido")]
+        [RegularExpression(@"^(((\d{1})*))$", ErrorMessage = "correlativo no valido")]
         [Column(TypeName = "decimal(8,2)")]
         public Decimal Amount { get; set; }
 
+        [Range(1, 9999, ErrorMessage = "correlativo no valido")]
+        [RegularExpression(@"^(((\d{1})*))$", ErrorMessage = "correlativo no valido")]
         [Column(TypeName = "decimal(8,2)")]
         public Decimal Emi { get; set; }
         public DateTime CreatedAt { get; set; }

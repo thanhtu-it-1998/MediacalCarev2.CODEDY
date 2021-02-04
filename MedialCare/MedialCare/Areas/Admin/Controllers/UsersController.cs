@@ -37,7 +37,8 @@ namespace MedialCare.Areas.Admin.Controllers
                 User = await query.Select(x => new User
                 {
                     ID = x.u.ID,
-                    FirstName = x.u.LastName,
+                    FirstName = x.u.FirstName,
+                    LastName=x.u.LastName,
                     Email = x.u.Email,
                     Gender = x.u.Gender,
                     Address = x.u.Address,
@@ -90,6 +91,10 @@ namespace MedialCare.Areas.Admin.Controllers
                 _context.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                ModelState.AddModelError("", "Create fleided. Please enter value in input");
             }
             return View(user);
         }
