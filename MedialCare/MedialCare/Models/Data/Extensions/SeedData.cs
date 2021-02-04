@@ -55,7 +55,7 @@ namespace MedialCare.Models.Extensions
                      Designation = "Developer",
                      Email = "vuquanghuy@gmail.com",
                      Gender = Gender.Male,
-                     JoinDate = DateTime.Parse("16-02-2001"),
+                     JoinDate = DateTime.Parse("03-02-1998"),
                      Level = Level.Admin,
                      Phone = "98372837362",
                      Salary = 265
