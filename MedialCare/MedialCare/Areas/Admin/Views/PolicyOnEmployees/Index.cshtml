@@ -10,7 +10,7 @@
     <p class="ml-4">All bootstrap element classies</p>
     <div class="m-2 row">
         <div class="col-8">
-            <a asp-area="Admin" asp-controller="PoliciesOnEmployee" asp-action="Create" class="btn btn-outline-info">Create New</a>
+            <a asp-area="Admin" asp-controller="PolicyOnEmployees" asp-action="Create" class="btn btn-outline-info">Create New</a>
         </div>
         <div class="header-search float-lg-right col-4">
             <form asp-action="Index">
@@ -23,8 +23,11 @@
     <table class="data-table table nowrap">
         <thead>
             <tr>
-                <th class="table-plus">StartDate</th>
-                <th>EndDate</th>
+                <th class="table-plus">Employee Name</th>
+                <th>Policy Name</th>
+                <th>Policy Amount</th>
+                <th>Start Date</th>
+                <th>End Date</th>
                 <th>Status</th>
                 <th class="datatable-nosort">Actions</th>
             </tr>
@@ -32,22 +35,31 @@
         <tbody>
             @foreach (var item in Model.PolicyOnEmployee)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StartDate)
-                    </td>
-                    <td style="display: block;width: 200px;overflow:hidden; white-space:nowrap;text-overflow:ellipsis">
-                        @Html.DisplayFor(modelItem => item.EndDate)
-                    </td>
-                    <td style="display: block;width: 200px;overflow:hidden; white-space:nowrap;text-overflow:ellipsis">
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
-                    <td>
-                        <a asp-area="Admin" asp-controller="PolicyOnEmployees" asp-action="Details" asp-route-id="@item.ID" data-color="#17a2b8" class="font-20" title="Details"><i class="icon-copy ti-eye"></i></a>
-                        <a asp-area="Admin" asp-controller="PolicyOnEmployees" asp-action="Edit" asp-route-id="@item.ID" data-color="#265ed7" class="mr-2 ml-2 font-20" title="Edit"><i class="icon-copy dw dw-edit2"></i></a>
-                        <a asp-area="Admin" asp-controller="PolicyOnEmployees" asp-action="Delete" asp-route-id="@item.ID" data-color="#e95959" class="font-20" title="Delete"><i class="icon-copy dw dw-delete-3"></i></a>
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Policy.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Policy.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <a asp-area="Admin" asp-controller="PolicyOnEmployees" asp-action="Details" asp-route-id="@item.ID" data-color="#17a2b8" class="font-20" title="Details"><i class="icon-copy ti-eye"></i></a>
+                    <a asp-area="Admin" asp-controller="PolicyOnEmployees" asp-action="Edit" asp-route-id="@item.ID" data-color="#265ed7" class="mr-2 ml-2 font-20" title="Edit"><i class="icon-copy dw dw-edit2"></i></a>
+                    <a asp-area="Admin" asp-controller="PolicyOnEmployees" asp-action="Delete" asp-route-id="@item.ID" data-color="#e95959" class="font-20" title="Delete"><i class="icon-copy dw dw-delete-3"></i></a>
+                </td>
+            </tr>
             }
 
         </tbody>

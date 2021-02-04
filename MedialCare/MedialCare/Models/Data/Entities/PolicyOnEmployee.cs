@@ -17,9 +17,12 @@ namespace MedialCare.Models.Entities
         public int UserId{ get; set; }
 
         [ForeignKey("Policy")]
+        [Display(Name = "Name Policy")]
         public int PolicyId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+
+        [EnumDataType(typeof(Status))]
         public Status Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public string CreatedBy { get; set; }

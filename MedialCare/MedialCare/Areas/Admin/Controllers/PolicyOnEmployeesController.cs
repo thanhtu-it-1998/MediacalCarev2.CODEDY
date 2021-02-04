@@ -32,9 +32,11 @@ namespace MedialCare.Areas.Admin.Controllers
                 PolicyOnEmployee = await query.Select(x => new PolicyOnEmployee
                 {
                     ID = x.e.ID,
-                    StartDate=x.e.StartDate,
-                    EndDate=x.e.EndDate,
-                    Status=x.e.Status,
+                    StartDate = x.e.StartDate,
+                    EndDate = x.e.EndDate,
+                    Status = x.e.Status,
+                    Policy = x.e.Policy,
+                    User=x.e.User,
                 }).OrderBy(x => x.ID)
                 .Skip((page - 1) * PageSize).Take(PageSize).ToListAsync(),
                 PagingModel = new PagingModel
@@ -70,8 +72,9 @@ namespace MedialCare.Areas.Admin.Controllers
         // GET: Admin/PolicyOnEmployees/Create
         public IActionResult Create()
         {
-            ViewData["PolicyId"] = new SelectList(_context.Policys, "ID", "Description");
-            ViewData["UserId"] = new SelectList(_context.Users, "ID", "Address");
+            ViewData["PolicyName"] = new SelectList(_context.Policys, "ID", "Name");
+            ViewData["PolicyAmount"] = new SelectList(_context.Policys, "ID", "Amount");
+            ViewData["Username"] = new SelectList(_context.Users, "ID", "Username");
             return View();
         }
 
@@ -88,8 +91,9 @@ namespace MedialCare.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PolicyId"] = new SelectList(_context.Policys, "ID", "Description", policyOnEmployee.PolicyId);
-            ViewData["UserId"] = new SelectList(_context.Users, "ID", "Address", policyOnEmployee.UserId);
+            ViewData["PolicyName"] = new SelectList(_context.Policys, "ID", "Name", policyOnEmployee.PolicyId);
+            ViewData["PolicyAmount"] = new SelectList(_context.Policys, "ID", "Amount", policyOnEmployee.PolicyId);
+            ViewData["Username"] = new SelectList(_context.Users, "ID", "Username", policyOnEmployee.UserId);
             return View(policyOnEmployee);
         }
 
@@ -106,7 +110,9 @@ namespace MedialCare.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["ID"] = new SelectList(_context.Companys, "ID", "Status", policyOnEmployee.ID);
+            ViewData["PolicyName"] = new SelectList(_context.Policys, "ID", "Name", policyOnEmployee.PolicyId);
+            ViewData["PolicyAmount"] = new SelectList(_context.Policys, "ID", "Amount", policyOnEmployee.PolicyId);
+            ViewData["UserName"] = new SelectList(_context.Users, "ID", "Username", policyOnEmployee.UserId);
             return View(policyOnEmployee);
         }
 
@@ -142,8 +148,9 @@ namespace MedialCare.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PolicyId"] = new SelectList(_context.Policys, "ID", "Description", policyOnEmployee.PolicyId);
-            ViewData["UserId"] = new SelectList(_context.Users, "ID", "Address", policyOnEmployee.UserId);
+            ViewData["PolicyName"] = new SelectList(_context.Policys, "ID", "Name", policyOnEmployee.PolicyId);
+            ViewData["PolicyAmount"] = new SelectList(_context.Policys, "ID", "Amount", policyOnEmployee.PolicyId);
+            ViewData["UserId"] = new SelectList(_context.Users, "ID", "Username", policyOnEmployee.UserId);
             return View(policyOnEmployee);
         }
 
