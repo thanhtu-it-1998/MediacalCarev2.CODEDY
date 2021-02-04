@@ -26,6 +26,7 @@
                 <th class="table-plus">FirstName</th>
                 <th>lastName</th>
                 <th>Email</th>
+                <th>Level</th>
                 <th>Gender</th>
                 <th>Address</th>
                 <th>Phone</th>
@@ -47,6 +48,9 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Gender)
                 </td>
                 <td>
@@ -61,7 +65,7 @@
                 <td>
                     <a asp-area="Admin" asp-controller="Users" asp-action="Details" asp-route-id="@item.ID" data-color="#17a2b8" class="font-20" title="Details"><i class="icon-copy ti-eye"></i></a>
                     <a asp-area="Admin" asp-controller="Users" asp-action="Edit" asp-route-id="@item.ID" data-color="#265ed7" class="mr-2 ml-2 font-20" title="Edit"><i class="icon-copy dw dw-edit2"></i></a>
-                    <a asp-area="Admin" asp-controller="Users" asp-action="Delete" asp-route-id="@item.ID" data-color=  "#e95959" class="font-20" title="Delete"><i class="icon-copy dw dw-delete-3"></i></a>
+                    <a asp-area="Admin" asp-controller="Users" asp-action="Delete" asp-route-id="@item.ID" data-color="#e95959" class="font-20" title="Delete"><i class="icon-copy dw dw-delete-3"></i></a>
                 </td>
             </tr>
             }

@@ -13,26 +13,21 @@
         <div class="row pb-30">
             <div class="col-md-6">
                 <h5 class="mb-15">Name: <span class="font-weight-bold"> @Html.DisplayFor(model => model.Name)</span></h5>
-                <p class="font-14 mb-5">Date: <strong class="weight-600">@DateTime.Now</strong></p>
-                <p class="font-14 mb-5">Company <strong class="weight-600">@Html.DisplayFor(model => model.Company.Name)</strong></p>
+                <h5 class="mb-15">Name: <span class="font-weight-bold"> @Html.DisplayFor(model => model.Company.Name)</span></h5>
             </div>
 
         </div>
         <div class="invoice-desc pb-30">
             <div class="invoice-desc-head clearfix">
-                <div class="invoice-sub">Name</div>
-                <div class="invoice-rate">Description</div>
-                <div class="invoice-hours">Amount</div>
+                <div class="invoice-sub">Description</div>
+                <div class="invoice-rate">Amount</div>
                 <div class="invoice-hours">Emi</div>
             </div>
             <div class="invoice-desc-body">
                 <ul>
                     <li class="clearfix">
-                        <div class="invoice-sub">@Html.DisplayFor(model => model.Name)</div>
+                        <div class="invoice-sub">@Html.DisplayFor(model => model.Description)</div>
                         <div class="invoice-rate">
-                            @Html.DisplayFor(model => model.Description)
-                        </div>
-                        <div class="invoice-hours">
                             @Html.DisplayFor(model => model.Amount)
                         </div>
                         <div class="invoice-hours">
@@ -40,10 +35,11 @@
                         </div>
                     </li>
                 </ul>
-                <div class="m-2">
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.ID">Delete</a>
-                    <a class="btn btn-success" asp-action="Index">Back to List</a>
-                </div>
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="ID" />
+                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                    <a asp-action="Index" class="btn btn-success">Back to List</a>
+                </form>
             </div>
 
         </div>

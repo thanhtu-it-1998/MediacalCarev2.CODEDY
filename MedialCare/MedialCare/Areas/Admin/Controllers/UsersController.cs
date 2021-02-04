@@ -9,6 +9,7 @@ using MedialCare.Models.EF;
 using MedialCare.Models.Entities;
 using MedialCare.Models.Catalog;
 using MedialCare.Areas.Account.Controllers;
+using MedialCare.Models.Enum;
 
 namespace MedialCare.Areas.Admin.Controllers
 {
@@ -126,7 +127,6 @@ namespace MedialCare.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["ID"] = new SelectList(_context.Users, "ID", "Name", user.ID);
             return View(user);
         }
 
@@ -162,7 +162,6 @@ namespace MedialCare.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ID"] = new SelectList(_context.Users, "ID", "Level");
             return View(user);
         }
 
@@ -182,5 +181,22 @@ namespace MedialCare.Areas.Admin.Controllers
         {
             return _context.Users.Any(e => e.ID == id);
         }
+
+        //public static SelectList GetDirectionSelectList()
+        //{
+        //    Array values = Enum.GetValues(typeof(Enum));
+        //    List<string> items = new List<string>(values.Length);
+
+        //    foreach (var i in values)
+        //    {
+        //        items.Add(new Level
+        //        {
+        //             = Enum.GetName(typeof(Enum), i),
+        //            Value = i.ToString()
+        //        });
+        //    }
+
+        //    return new SelectList(items);
+        //}
     }
 }
