@@ -1,10 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MedialCare.Models.Entities;
+using MedialCare.Models.Data.Entities;
 using MedialCare.Models.Enum;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MedialCare.Models.Extensions
 {
@@ -55,8 +52,82 @@ namespace MedialCare.Models.Extensions
                      Designation = "Developer",
                      Email = "vuquanghuy@gmail.com",
                      Gender = Gender.Male,
-                     JoinDate = DateTime.Parse("03-02-1998"),
+                     JoinDate = DateTime.Parse("03-02-2001"),
                      Level = Level.Admin,
+                     Phone = "98372837362",
+                     Salary = 265
+                 },
+                 new User()
+                 {
+                     ID = 4,
+                     FirstName = "Tuan",
+                     LastName = "Pham",
+                     Address = "My Dinh, Ha Noi",
+                     Username = "phamtuan",
+                     Password = "123456",
+                     Designation = "Developer",
+                     Email = "phamtuan@gmail.com",
+                     Gender = Gender.Male,
+                     JoinDate = DateTime.Parse("09-12-2001"),
+                     Level = Level.Admin,
+                     Phone = "98372837362",
+                     Salary = 265
+                 },new User {
+                     ID = 5,
+                     FirstName = "Thi Chan Hoa",
+                     LastName = "Do",
+                     Address = "So Tay, Ha Noi",
+                     Username = "chanhoa",
+                     Password = "123456",
+                     Designation = "Tester",
+                     Email = "dothichanhoa@gmail.com",
+                     Gender = Gender.Female,
+                     JoinDate = DateTime.Parse("05-04-2000"),
+                     Level = Level.Admin,
+                     Phone = "98372837362",
+                     Salary = 265
+                 },new User {
+                     ID = 6,
+                     FirstName = "Dinh Hieu",
+                     LastName = "Nguyen ",
+                     Address = "Xuan Loc, Nghe An",
+                     Username = "nguyendinhhieu",
+                     Password = "123456",
+                     Designation = "Developer",
+                     Email = "nguyendinhhieu@gmail.com",
+                     Gender = Gender.Male,
+                     JoinDate = DateTime.Parse("01-03-1996"),
+                     Level = Level.Admin,
+                     Phone = "98372837362",
+                     Salary = 265
+                 },
+                 new User {
+                     ID = 7,
+                     FirstName = "Chau",
+                     LastName = "Bui ",
+                     Address = "Long Thanh, Vinh Long",
+                     Username = "chubui",
+                     Password = "123456",
+                     Designation = "Employee",
+                     Email = "chaubui@gmail.com",
+                     Gender = Gender.Female,
+                     JoinDate = DateTime.Parse("01-03-2002"),
+                     Level = Level.Employee,
+                     Phone = "98372837362",
+                     Salary = 265
+                 },
+                 new User {
+                     ID = 8,
+                     FirstName = "Ba Long",
+                     LastName = "Cao",
+                     Address = "Thuy Bieu, Hue",
+                     Username = "caobaolong",
+                     Password = "123456",
+                     Designation = "Employee",
+                     Email = "caobaolong@gmail.com",
+                     Gender = Gender.Female,
+                     JoinDate = DateTime.Parse("01-03-2002"),
+                     Level = Level.Employee,
                      Phone = "98372837362",
                      Salary = 265
                  }
@@ -76,15 +147,38 @@ namespace MedialCare.Models.Extensions
                     Address = "Dong Anh, Ha Noi, Viet Name",
                     Name = "MAXOSI",
                     Url = "www.maxosi.com"
+                },
+                new Company()
+                {
+                    ID = 3,
+                    Address = "California, UK",
+                    Name = "Facebook",
+                    Url = "www.facebook.com"
                 });
             modelBuilder.Entity<PolicyOnEmployee>().HasData(
                 new PolicyOnEmployee()
                 {
                     ID=1,
                     PolicyId=1,
-                    UserId=1,
+                    UserId=7,
                     StartDate= DateTime.Now,
-                    EndDate = DateTime.Parse("03-05-2021"),
+                    EndDate = DateTime.Parse("07-06-2022"),
+                    Status = Status.Request,
+                }, new PolicyOnEmployee()
+                {
+                    ID=1,
+                    PolicyId=1,
+                    UserId=8,
+                    StartDate= DateTime.Now,
+                    EndDate = DateTime.Parse("02-01-2024"),
+                    Status = Status.Request,
+                }, new PolicyOnEmployee()
+                {
+                    ID=1,
+                    PolicyId=1,
+                    UserId=2,
+                    StartDate= DateTime.Now,
+                    EndDate = DateTime.Parse("09-05-2021"),
                     Status = Status.Request,
                 });
             modelBuilder.Entity<Policy>().HasData(
@@ -96,6 +190,30 @@ namespace MedialCare.Models.Extensions
                     Description="Chinh sach nay danh cho nhung nhan vien moi vao cong ty, duoc ho tro tu phia cong ty len den 50%. Thoi han dang ky ke tu ngay hom nay",
                     Amount=678,
                     Emi=67,
+                },new Policy()
+                {
+                    ID=2,
+                    CompanyId=1,
+                    Name="Nhan vien lam viec tu 10 nam tro len trong cong ty",
+                    Description="Nhung nhan vien lam tu 10 nam tro len trong cong ty thi se duoc cong ty chi tra tien bao hiem toan phan. Gio han trong vong 20 nam",
+                    Amount=498,
+                    Emi=12,
+                },new Policy()
+                {
+                    ID=3,
+                    CompanyId=3,
+                    Name="Bao hiem xa hoi",
+                    Description="Bao hiem xa hoi la mot nghi vu va trach nhieu cua moi nguoi dan, Neu ban thuc hien bao hiem xa hoi trong vong 20 nam thi ban se nhan duoc mot goi troi cap sau khi ket thuc.",
+                    Amount=498,
+                    Emi=12,
+                },new Policy()
+                {
+                    ID=4,
+                    CompanyId=2,
+                    Name="Yeu tien cho nguoi trung tien",
+                    Description="Chinh sach yeu tien chon nguoi trung tien mac cac benh ve suong khop. Khach hang co the huong duoc cac goi tri lieu hoan toan mien phi trong suoc thoi gian su dung dich vu cua chung toi",
+                    Amount=498,
+                    Emi=12,
                 });
 
 
