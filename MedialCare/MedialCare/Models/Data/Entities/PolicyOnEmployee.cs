@@ -14,6 +14,7 @@ namespace MedialCare.Models.Entities
         public int ID { get; set; }
 
         [ForeignKey("User")]
+        [Display(Name = "Name User")]
         public int UserId{ get; set; }
 
         [ForeignKey("Policy")]

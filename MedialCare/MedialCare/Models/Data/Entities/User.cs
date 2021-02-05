@@ -26,7 +26,10 @@ namespace MedialCare.Models.Entities
         [Display( Name ="BOD")]
         public DateTime JoinDate { get; set; }
 
-        [Column(TypeName = "Decimal(8,2)")]
+
+        [Range(1, 999999999999)]
+        [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18, 2)")]
         public Decimal Salary { get; set; }
 
         [EnumDataType(typeof(Gender))]
@@ -36,6 +39,10 @@ namespace MedialCare.Models.Entities
 
         public string LastName { get; set; }
 
+        [Required(ErrorMessage = "You must provide a phone number")]
+        [Display(Name = "Phone")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         public string Phone { get; set; }
 
         public string Address { get; set; }

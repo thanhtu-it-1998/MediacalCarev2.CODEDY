@@ -22,15 +22,15 @@ namespace MedialCare.Models.Entities
         [Required]
         public string Description { get; set; }
 
-        [Range(1, 9999, ErrorMessage = "correlativo no valido")]
+        [Range(1, 9999999999999999999, ErrorMessage = "correlativo no valido")]
         [RegularExpression(@"^(((\d{1})*))$", ErrorMessage = "correlativo no valido")]
-        [Column(TypeName = "decimal(8,2)")]
-        public Decimal Amount { get; set; }
+        //[Column(TypeName = "decimal(8,2)")]
+        public long Amount { get; set; }
 
-        [Range(1, 9999, ErrorMessage = "correlativo no valido")]
+        [Range(1, 9999999999999999999, ErrorMessage = "correlativo no valido")]
         [RegularExpression(@"^(((\d{1})*))$", ErrorMessage = "correlativo no valido")]
-        [Column(TypeName = "decimal(8,2)")]
-        public Decimal Emi { get; set; }
+        //[Column(TypeName = "decimal(8,2)")]
+        public long Emi { get; set; }
         public DateTime CreatedAt { get; set; }
         public string CreatedBy { get; set; }
 
