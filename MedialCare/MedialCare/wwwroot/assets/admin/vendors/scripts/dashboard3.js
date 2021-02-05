@@ -1,20 +1,14 @@
 var options = {
     series: [
         {
-            name: "Appointment",
+            name: "FeedBack",
             data: [25, 15, 12, 20, 18, 26, 24, 25, 20, 25, 22, 30]
         },
         {
-            name: "Patient",
-            data: [15, 30, 17, 15, 20, 21, 30, 20, 26, 20, 28, 25]
+            name: "Request",
+            data: [15, 20, 17, 15, 20, 21, 30, 20, 26, 20, 28, 25]
         }
-        , {
-            name: "Company",
-            data: [15, 30, 17, 15, 23, 21, 30, 20, 26, 20, 28, 25]
-        }, {
-            name: "Earning",
-            data: [15, 30, 17, 15, 10, 21, 30, 20, 26, 20, 28, 25]
-        }
+        
     ],
     chart: {
         height: 300,
@@ -34,7 +28,7 @@ var options = {
             show: false
         }
     },
-    colors: ['#f0746c', '#255cd3', '#006666','#0000ff'],
+    colors: ['#f0746c', '#255cd3'],
     dataLabels: {
         enabled: false,
     },

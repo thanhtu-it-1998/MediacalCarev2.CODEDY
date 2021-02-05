@@ -22,18 +22,9 @@ namespace MedialCare.Areas.Admin.Controllers
         {
             var overview = new OverviewModel()
             {
-                Appointment = _context.PolicyOnEmployees
-                              .Where(x => x.Status == Status.Request)
-                              .Count(),
-                TotalPartient = _context.Users
-                                .Where(x => x.Level == Level.Employee)
-                                .Count(),
-                TotalCompany = _context.Companys.Count(),
-                Earning = _context.PolicyOnEmployees
-                            .Where(x => x.Status == Status.Approval)
-                              .Count(),
-                User = _context.Users.Where( x=>x.Level == Level.Admin).ToList(),
-
+                FeedBackTotal = _context.Feedbacks.Count(),
+                RequestTotal = _context.RequestPolicies.Count(),
+                User = _context.Users.Where(x => x.Level == Level.Admin).ToList(),
             };
             return View(overview);
 

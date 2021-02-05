@@ -8,10 +8,8 @@ namespace MedialCare.Areas.Admin.Models.Common
 {
     public class OverviewModel
     {
-        public int Appointment { get; set; }
-        public int TotalPartient { get; set; }
-        public int TotalCompany{ get; set; }
-        public int Earning { get; set; }
+        public int FeedBackTotal { get; set; }
+        public int RequestTotal { get; set; }
         public List<User> User { get; set; }
     }
 }
