@@ -18,6 +18,7 @@ namespace MedialCare.Models.Data.Configurations
             builder.Property(x => x.Name).IsRequired().HasMaxLength(200);
             builder.Property(x => x.Address).IsRequired();
             builder.Property(x => x.Url).IsRequired();
+            builder.Property(x => x.Image).HasDefaultValue("041.jpg");
             builder.Property(x => x.CreatedAt).HasColumnType("Date").HasDefaultValueSql("GetDate()");
             builder.Property(x => x.CreatedBy).HasDefaultValue("Admin");
             builder.Property(x => x.UpdatedAt).HasColumnType("Date").HasDefaultValueSql("GetDate()");

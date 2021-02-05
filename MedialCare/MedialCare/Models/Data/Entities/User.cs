@@ -20,10 +20,10 @@ namespace MedialCare.Models.Entities
 
         [EnumDataType(typeof(Level))]
         public Level Level { get; set; }
-
+        public string Image { get; set; }
         public string Designation { get; set; }
 
-        [Display( Name ="BOD")]
+        [Display(Name = "BOD")]
         public DateTime JoinDate { get; set; }
 
 

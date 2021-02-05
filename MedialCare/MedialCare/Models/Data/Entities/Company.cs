@@ -14,7 +14,7 @@ namespace MedialCare.Models.Entities
         public string Name { get; set; }
         [Required]
         public string Address { get; set; }
-
+        public string Image{ get; set; }
         public DateTime CreatedAt { get; set; }
         public string CreatedBy { get; set; }
 

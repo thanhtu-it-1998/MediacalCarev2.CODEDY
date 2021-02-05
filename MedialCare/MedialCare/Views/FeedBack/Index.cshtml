@@ -23,29 +23,61 @@
                 </div>
 
             </div>
-            <form asp-action="Index">
-                <div class="form-group">
-                    <label asp-for="FullName"></label>
-                    <input class="form-control" asp-for="FullName" placeholder="Johnny Brown">
-                    <span asp-validation-for="FullName" class="text-danger"></span>
+            <div class="row">
+                <div class="col">
+                    <form asp-action="Index">
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label asp-for="FullName" class="font-weight-bold"></label>
+                            </div>
+                            <div class="col-6">
+                                <input class="form-control" asp-for="FullName" placeholder="Johnny Brown">
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label asp-for="Email" class="font-weight-bold"></label>
+                            </div>
+                            <div class="col-6">
+                                <input class="form-control" asp-for="Email" value="bootstrap@example.com">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-4">
+
+                                <label asp-for="Phone" class="font-weight-bold"></label>
+                            </div>
+                            <div class="col-6">
+
+                                <input class="form-control" asp-for="Phone" placeholder="1-(111)-111-1111">
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-4">
+
+                                <label asp-for="Content" class="font-weight-bold"></label>
+                            </div>
+                            <div class="col-6">
+
+                                <textarea class="form-control" asp-for="Content"></textarea>
+                                <span asp-validation-for="Content" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class=" col-6 offset-4">
+                                <input type="submit"  value="Send" class="btn btn-primary  w-100 form-control text-white" />
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
-                <div class="form-group">
-                    <label asp-for="Email"></label>
-                    <input class="form-control" asp-for="Email" value="bootstrap@example.com">
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Phone"></label>
-                    <input class="form-control" asp-for="Phone" placeholder="1-(111)-111-1111">
-                    <span asp-validation-for="Phone" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Content"></label>
-                    <textarea class="form-control" asp-for="Content"></textarea>
-                    <span asp-validation-for="Content" class="text-danger"></span>
-                </div>
-                <button type="submit" class="btn btn-primary">Send</button>
-            </form>
+            </div>
         </div>
         <div class="footer-wrap pd-20 mb-20 card-box">
             Copyright © 2020 by <a asp-controller="home" asp-action="index">Medical Care</a>. All right reserved.

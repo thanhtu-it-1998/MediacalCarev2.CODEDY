@@ -2,6 +2,7 @@
 using MedialCare.Models.Data.Entities;
 using MedialCare.Models.Enum;
 using System;
+using MedialCare.Models.Entities;
 
 namespace MedialCare.Models.Extensions
 {
@@ -24,7 +25,8 @@ namespace MedialCare.Models.Extensions
                     JoinDate = DateTime.Parse("03-09-1998"),
                     Level = Level.Admin,
                     Phone = "0359077335",
-                    Salary = 230
+                    Salary = 230,
+                    Image= "133690010_890302931723740_4897017713202137858_o.jpg"
                 },  new User()
                 {
                     ID = 2,
@@ -39,7 +41,9 @@ namespace MedialCare.Models.Extensions
                     JoinDate = DateTime.Parse("03-09-1998"),
                     Level = Level.Employee,
                     Phone = "0367376544",
-                    Salary = 254
+                    Salary = 254,
+                    Image= ""
+
                 },
                  new User()
                  {
@@ -55,7 +59,9 @@ namespace MedialCare.Models.Extensions
                      JoinDate = DateTime.Parse("03-02-2001"),
                      Level = Level.Admin,
                      Phone = "98372837362",
-                     Salary = 265
+                     Salary = 265,
+                     Image= "120276334_1294841180852265_978321052909351337_o.jpg"
+
                  },
                  new User()
                  {
@@ -71,7 +77,9 @@ namespace MedialCare.Models.Extensions
                      JoinDate = DateTime.Parse("09-12-2001"),
                      Level = Level.Admin,
                      Phone = "98372837362",
-                     Salary = 265
+                     Salary = 265,
+                     Image= "120812760_1010459009465475_90927199314198547_o.jpg"
+
                  },new User {
                      ID = 5,
                      FirstName = "Thi Chan Hoa",
@@ -85,7 +93,8 @@ namespace MedialCare.Models.Extensions
                      JoinDate = DateTime.Parse("05-04-2000"),
                      Level = Level.Admin,
                      Phone = "98372837362",
-                     Salary = 265
+                     Salary = 265,
+                     Image= "46224173_533702767097372_931079331302604800_n.jpg"
                  },new User {
                      ID = 6,
                      FirstName = "Dinh Hieu",
@@ -99,7 +108,8 @@ namespace MedialCare.Models.Extensions
                      JoinDate = DateTime.Parse("01-03-1996"),
                      Level = Level.Admin,
                      Phone = "98372837362",
-                     Salary = 265
+                     Salary = 265,
+                     Image= "133650886_3739659902806749_1154799049283951510_o.jpg"
                  },
                  new User {
                      ID = 7,
@@ -129,7 +139,7 @@ namespace MedialCare.Models.Extensions
                      JoinDate = DateTime.Parse("01-03-2002"),
                      Level = Level.Employee,
                      Phone = "98372837362",
-                     Salary = 265
+                     Salary = 265,
                  }
                 );
             modelBuilder.Entity<Company>().HasData(
@@ -139,21 +149,26 @@ namespace MedialCare.Models.Extensions
                     ID = 1,
                     Address = "Tu Liem, Ha Noi, Viet Name",
                     Name = "SIMAX",
-                    Url = "www.simax.com"
+                    Url = "www.simax.com",
+                    Image = "pexels-jonathan-meyer-668300.jpg"
+
                 },
                 new Company()
                 {
                     ID = 2,
                     Address = "Dong Anh, Ha Noi, Viet Name",
                     Name = "MAXOSI",
-                    Url = "www.maxosi.com"
+                    Url = "www.maxosi.com",
+                    Image = "pexels-photo-5327865.jpeg"
                 },
                 new Company()
                 {
                     ID = 3,
                     Address = "California, UK",
                     Name = "Facebook",
-                    Url = "www.facebook.com"
+                    Url = "www.facebook.com",
+                    Image = "pexels-tom-fisk-1692693.jpg"
+
                 });
             modelBuilder.Entity<PolicyOnEmployee>().HasData(
                 new PolicyOnEmployee()
@@ -166,7 +181,7 @@ namespace MedialCare.Models.Extensions
                     Status = Status.Request,
                 }, new PolicyOnEmployee()
                 {
-                    ID=1,
+                    ID=2,
                     PolicyId=1,
                     UserId=8,
                     StartDate= DateTime.Now,
@@ -174,7 +189,7 @@ namespace MedialCare.Models.Extensions
                     Status = Status.Request,
                 }, new PolicyOnEmployee()
                 {
-                    ID=1,
+                    ID=3,
                     PolicyId=1,
                     UserId=2,
                     StartDate= DateTime.Now,
