@@ -47,7 +47,8 @@ namespace MedialCare.Areas.Account.Controllers
                     }
                     else
                     {
-                        return RedirectToPage("Home","Index");
+                        return RedirectToAction("Index", "Home", new { area = "" });
+
                     }
                 }
                 else
