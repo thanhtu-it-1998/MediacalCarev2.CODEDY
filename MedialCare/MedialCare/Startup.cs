@@ -34,9 +34,9 @@ namespace MedialCare
             services.AddRazorPages();
 
             services.AddSession(options => {
-                options.IdleTimeout = TimeSpan.FromMinutes(1);
+                options.IdleTimeout = TimeSpan.FromMinutes(100000);
             });
-
+            
             services.AddControllersWithViews();
         }
 
