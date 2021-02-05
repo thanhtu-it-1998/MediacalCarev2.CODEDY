@@ -1,4 +1,5 @@
-﻿using MedialCare.Models.Entities;
+﻿using MedialCare.Models.Data.Entities;
+using MedialCare.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace MedialCare.Models.Catalog
         public IEnumerable<User> User { get; set; }
         public IEnumerable<Policy> Policy { get; set; }
         public IEnumerable<PolicyOnEmployee> PolicyOnEmployee { get; set; }
+        public IEnumerable<FeedBack> FeedBack { get; set; }
         public PagingModel PagingModel { get; set; }
     }
 }

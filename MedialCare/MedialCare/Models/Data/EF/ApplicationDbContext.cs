@@ -32,6 +32,7 @@ namespace MedialCare.Models.EF
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new PolicyConfiguration());
             modelBuilder.ApplyConfiguration(new PolicyOnEmployeeConfiguration());
+            modelBuilder.ApplyConfiguration(new FeedBackConfiguration());
             // Seed Database
             modelBuilder.Seed();
         }

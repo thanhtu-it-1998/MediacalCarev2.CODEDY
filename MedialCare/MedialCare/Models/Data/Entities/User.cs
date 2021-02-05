@@ -18,6 +18,7 @@ namespace MedialCare.Models.Entities
 
         public string Password { get; set; }
 
+        [EnumDataType(typeof(Level))]
         public Level Level { get; set; }
 
         public string Designation { get; set; }
@@ -28,6 +29,7 @@ namespace MedialCare.Models.Entities
         [Column(TypeName = "Decimal(8,2)")]
         public Decimal Salary { get; set; }
 
+        [EnumDataType(typeof(Gender))]
         public Gender Gender { get; set; }
 
         public string FirstName { get; set; }

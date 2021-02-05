@@ -1,0 +1,65 @@
+﻿@model ListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-box pb-10">
+    <div class="h5 pd-20 mb-0 ml-1">Recent Patient</div>
+    <p class="ml-4">All bootstrap element classies</p>
+    <div class="m-2 row">
+        <div class="header-search float-lg-right col-4">
+            <form asp-action="Index">
+                <div class="form-group mb-0 ">
+                    <input type="text" class="form-control search-input" name="keySearch" placeholder="Search Here">
+                </div>
+            </form>
+        </div>
+    </div>
+    <table class="data-table table nowrap">
+        <thead>
+            <tr>
+                <th class="table-plus">FullName</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Content</th>
+                <th class="datatable-nosort">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.FeedBack)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Feedbacks" asp-action="Delete" asp-route-id="@item.ID" data-color="#e95959" class="font-20" title="Delete"><i class="icon-copy dw dw-delete-3"></i></a>
+                </td>
+            </tr>
+            }
+
+        </tbody>
+
+    </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <div page-model="@Model.PagingModel" page-action="Index"
+                 page-class="btn page-item " page-class-normal="btn-outline-dark"
+                 page-classes-enabled="true" page-class-selected="btn-info"
+                 class="font-weight-bold float-lg-right  m-4">
+
+            </div>
+        </ul>
+    </nav>
+</div>

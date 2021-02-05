@@ -1,6 +1,6 @@
-﻿
+﻿@model FeedBack
 @{
-    ViewData["Title"] = "Feed Back";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -21,24 +21,28 @@
                     <h4 class="text-blue h4">Form Feed Back</h4>
                     <p class="mb-30">All bootstrap element classies</p>
                 </div>
-          
+
             </div>
-            <form>
+            <form asp-action="Index">
                 <div class="form-group">
-                    <label>Full Name</label>
-                    <input class="form-control" type="text" placeholder="Johnny Brown">
+                    <label asp-for="FullName"></label>
+                    <input class="form-control" asp-for="FullName" placeholder="Johnny Brown">
+                    <span asp-validation-for="FullName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label>Email</label>
-                    <input class="form-control" value="bootstrap@example.com" type="email">
+                    <label asp-for="Email"></label>
+                    <input class="form-control" asp-for="Email" value="bootstrap@example.com">
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label>Your phone number</label>
-                    <input class="form-control" value="1-(111)-111-1111" type="tel">
+                    <label asp-for="Phone"></label>
+                    <input class="form-control" asp-for="Phone" placeholder="1-(111)-111-1111">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label>Feedback content</label>
-                    <textarea class="form-control"></textarea>
+                    <label asp-for="Content"></label>
+                    <textarea class="form-control" asp-for="Content"></textarea>
+                    <span asp-validation-for="Content" class="text-danger"></span>
                 </div>
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
