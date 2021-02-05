@@ -24,7 +24,12 @@ namespace MedialCare.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult PolicyOfCompany()
+        {
+            return View();
+        }
+
+        public IActionResult PolicyDetail()
         {
             return View();
         }
