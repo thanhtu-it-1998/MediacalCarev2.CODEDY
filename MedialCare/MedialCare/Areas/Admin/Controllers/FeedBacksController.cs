@@ -1,4 +1,5 @@
-﻿using MedialCare.Models.Catalog;
+﻿using MedialCare.Areas.Account.Controllers;
+using MedialCare.Models.Catalog;
 using MedialCare.Models.Data.Entities;
 using MedialCare.Models.EF;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 namespace MedialCare.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class FeedBacksController : Controller
+    public class FeedBacksController : BaseController
     {
 
         private readonly ApplicationDbContext _context;

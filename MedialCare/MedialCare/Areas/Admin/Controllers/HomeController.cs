@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MedialCare.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ApplicationDbContext _context;
         public HomeController(ApplicationDbContext context)

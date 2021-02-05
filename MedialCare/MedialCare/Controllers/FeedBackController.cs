@@ -13,7 +13,7 @@ using MedialCare.Models.Data.Entities;
 
 namespace MedialCare.Controllers
 {
-    public class FeedBackController : Controller
+    public class FeedBackController : BaseController
     {
         private readonly ApplicationDbContext _context;
 

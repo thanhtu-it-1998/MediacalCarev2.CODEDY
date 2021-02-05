@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MedialCare.Areas.Account.Controllers;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MedialCare.Controllers
 {
-    public class ContactUsController : Controller
+    public class ContactUsController : BaseController
     {
         public IActionResult Index()
         {

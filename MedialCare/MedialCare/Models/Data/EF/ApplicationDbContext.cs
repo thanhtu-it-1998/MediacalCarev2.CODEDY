@@ -12,7 +12,7 @@ namespace MedialCare.Models.EF
 {
     public class ApplicationDbContext : DbContext
     {
-       
+
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -23,6 +23,7 @@ namespace MedialCare.Models.EF
         public DbSet<Company> Companys { get; set; }
         public DbSet<Policy> Policys { get; set; }
         public DbSet<FeedBack> Feedbacks { get; set; }
+        public DbSet<RequestPolicy> RequestPolicies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,6 +33,7 @@ namespace MedialCare.Models.EF
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new PolicyConfiguration());
             modelBuilder.ApplyConfiguration(new PolicyOnEmployeeConfiguration());
+            modelBuilder.ApplyConfiguration(new RequestPolicyConfiguration());
             modelBuilder.ApplyConfiguration(new FeedBackConfiguration());
             // Seed Database
             modelBuilder.Seed();

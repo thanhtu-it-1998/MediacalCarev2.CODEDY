@@ -3,18 +3,19 @@
     ViewData["Title"] = "PolicyOfCompany";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model RequetModel
 
 <div class="card-box pb-10">
-   
+
     <div class="m-2 row">
         <div class="col-8">
-            <div class="h5 pd-20 mb-0 ml-1">Recent Patient</div>
+            <div class="h5 pd-20 mb-0 ml-1">Name Company: @Model.Company.Name</div>
             <p class="ml-4">All bootstrap element classies</p>
         </div>
         <div class="header-search float-lg-right col-4">
-            <form asp-action="Index">
+            <form asp-action="PolicyOfCompany" method="get">
                 <div class="form-group mb-0 ">
-                    <input type="text" class="form-control search-input" name="keySearch" placeholder="Search Here">
+                    <input type="text" class="form-control search-input" name="keySearch" value="@Model.Key" placeholder="Search Here">
                 </div>
             </form>
         </div>
@@ -22,192 +23,43 @@
     <table class="data-table table nowrap">
         <thead>
             <tr>
-                <th class="table-plus">Name</th>
-                <th>Gender</th>
-                <th>Weight</th>
-                <th>Assigned Doctor</th>
-                <th>Admit Date</th>
-                <th>Disease</th>
+                <th class="table-plus">Company</th>
+                <th>Policy</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Emi</th>
                 <th class="datatable-nosort">Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="table-plus">
-                    <div class="name-avatar d-flex align-items-center">
-                        <div class="avatar mr-2 flex-shrink-0">
-                            <img src="~/assets/admin/vendors/images/photo4.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
+            @foreach (var p in Model.Policies)
+            {
+                <tr>
+                    <td class="table-plus">
+                        @Model.Company.Name
+                    </td>
+                    <td>@p.Name</td>
+                    <td>@p.Description</td>
+                    <td>@p.Amount</td>
+                    <td>@p.Emi</td>
+                    <td>
+                        <div class="table-actions">
+                            <a asp-controller="Home" asp-action="PolicyHandl" asp-route-id="@p.ID" onclick ="alert('You submitted the request successfully')"class="btn btn-info text-white">Request</a>
                         </div>
-                        <div class="txt">
-                            <div class="weight-600">Jennifer O. Oster</div>
-                        </div>
-                    </div>
-                </td>
-                <td>Female</td>
-                <td>45 kg</td>
-                <td>Dr. Callie Reed</td>
-                <td>19 Oct 2020</td>
-                <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Typhoid</span></td>
-                <td>
-                    <div class="table-actions">
-                        <a asp-controller="home" asp-action="policydetail" class="btn btn-primary">See More</a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="table-plus">
-                    <div class="name-avatar d-flex align-items-center">
-                        <div class="avatar mr-2 flex-shrink-0">
-                            <img src="~/assets/admin/vendors/images/photo5.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
-                        </div>
-                        <div class="txt">
-                            <div class="weight-600">Doris L. Larson</div>
-                        </div>
-                    </div>
-                </td>
-                <td>Male</td>
-                <td>76 kg</td>
-                <td>Dr. Ren Delan</td>
-                <td>22 Jul 2020</td>
-                <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Dengue</span></td>
-                <td>
-                    <div class="table-actions">
-                        <a asp-controller="home" asp-action="policydetail" class="btn btn-primary">See More</a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="table-plus">
-                    <div class="name-avatar d-flex align-items-center">
-                        <div class="avatar mr-2 flex-shrink-0">
-                            <img src="~/assets/admin/vendors/images/photo6.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
-                        </div>
-                        <div class="txt">
-                            <div class="weight-600">Joseph	Powell</div>
-                        </div>
-                    </div>
-                </td>
-                <td>Male</td>
-                <td>90 kg</td>
-                <td>Dr. Allen Hannagan</td>
-                <td>15 Nov 2020</td>
-                <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Infection</span></td>
-                <td>
-                    <div class="table-actions">
-                        <a asp-controller="home" asp-action="policydetail" class="btn btn-primary">See More</a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="table-plus">
-                    <div class="name-avatar d-flex align-items-center">
-                        <div class="avatar mr-2 flex-shrink-0">
-                            <img src="~/assets/admin/vendors/images/photo9.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
-                        </div>
-                        <div class="txt">
-                            <div class="weight-600">Jake Springer</div>
-                        </div>
-                    </div>
-                </td>
-                <td>Female</td>
-                <td>45 kg</td>
-                <td>Dr. Garrett Kincy</td>
-                <td>08 Oct 2020</td>
-                <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Covid 19</span></td>
-                <td>
-                    <div class="table-actions">
-                        <a asp-controller="home" asp-action="policydetail" class="btn btn-primary">See More</a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="table-plus">
-                    <div class="name-avatar d-flex align-items-center">
-                        <div class="avatar mr-2 flex-shrink-0">
-                            <img src="~/assets/admin/vendors/images/photo1.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
-                        </div>
-                        <div class="txt">
-                            <div class="weight-600">Paul Buckland</div>
-                        </div>
-                    </div>
-                </td>
-                <td>Male</td>
-                <td>76 kg</td>
-                <td>Dr. Maxwell Soltes</td>
-                <td>12 Dec 2020</td>
-                <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Asthma</span></td>
-                <td>
-                    <div class="table-actions">
-                        <a asp-controller="home" asp-action="policydetail" class="btn btn-primary">See More</a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="table-plus">
-                    <div class="name-avatar d-flex align-items-center">
-                        <div class="avatar mr-2 flex-shrink-0">
-                            <img src="~/assets/admin/vendors/images/photo2.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
-                        </div>
-                        <div class="txt">
-                            <div class="weight-600">Neil Arnold</div>
-                        </div>
-                    </div>
-                </td>
-                <td>Male</td>
-                <td>60 kg</td>
-                <td>Dr. Sebastian Tandon</td>
-                <td>30 Oct 2020</td>
-                <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Diabetes</span></td>
-                <td>
-                    <div class="table-actions">
-                        <a asp-controller="home" asp-action="policydetail" class="btn btn-primary">See More</a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="table-plus">
-                    <div class="name-avatar d-flex align-items-center">
-                        <div class="avatar mr-2 flex-shrink-0">
-                            <img src="~/assets/admin/vendors/images/photo8.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
-                        </div>
-                        <div class="txt">
-                            <div class="weight-600">Christian Dyer</div>
-                        </div>
-                    </div>
-                </td>
-                <td>Male</td>
-                <td>80 kg</td>
-                <td>Dr. Sebastian Tandon</td>
-                <td>15 Jun 2020</td>
-                <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Diabetes</span></td>
-                <td>
-                    <div class="table-actions">
-                        <a asp-controller="home" asp-action="policydetail" class="btn btn-primary">See More</a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="table-plus">
-                    <div class="name-avatar d-flex align-items-center">
-                        <div class="avatar mr-2 flex-shrink-0">
-                            <img src="~/assets/admin/vendors/images/photo1.jpg" class="border-radius-100 shadow" width="40" height="40" alt="">
-                        </div>
-                        <div class="txt">
-                            <div class="weight-600">Doris L. Larson</div>
-                        </div>
-                    </div>
-                </td>
-                <td>Male</td>
-                <td>76 kg</td>
-                <td>Dr. Ren Delan</td>
-                <td>22 Jul 2020</td>
-                <td><span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">Dengue</span></td>
-                <td>
-                    <div class="table-actions">
-                        <a asp-controller="home" asp-action="policydetail" class="btn btn-primary">See More</a>
-                    </div>
-                </td>
-            </tr>
+                    </td>
+                </tr>
+            }
         </tbody>
+
     </table>
 </div>
+<nav aria-label="Page navigation example">
+    <div page-model="@Model.PagingModel" page-action="PolicyOfCompany"
+         page-class="btn page-item " page-class-normal="btn-outline-dark"
+         page-classes-enabled="true" page-class-selected="  btn-info"
+         class="font-weight-bold float-lg-right  m-4">
+    </div>
+</nav>
+@*<script>
+  
+</script>*@

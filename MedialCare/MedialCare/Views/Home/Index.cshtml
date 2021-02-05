@@ -1,49 +1,29 @@
 ﻿@{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Home Page";
 }
-
-
 <div class="xs-pd-20-10 pd-ltr-20">
 
- 
+
     <div class="title pb-20 pt-20">
         <h2 class="h3 mb-0">Quick Start</h2>
     </div>
 
     <div class="row">
+        @foreach (var c in Model)
+        {
         <div class="col-md-4 mb-20">
-            <a asp-controller="home" asp-action="PolicyOfCompany" class="card-box d-block mx-auto pd-20 text-secondary">
+            <a asp-controller="home" asp-action="PolicyOfCompany" asp-route-id="@c.ID" class="card-box d-block mx-auto pd-20 text-secondary">
                 <div class="img pb-30">
                     <img src="~/assets/admin/vendors/images/medicine-bro.svg" alt="">
                 </div>
                 <div class="content">
-                    <h3 class="h4">Services</h3>
-                    <p class="max-width-200 ">We provide superior health care in a compassionate maner</p>
+                    <h3 class="h4">@c.Name</h3>
+                    <p class="max-width-200 ">@c.Address</p>
+                    <p class="max-width-200 ">@c.Url</p>
                 </div>
             </a>
         </div>
-        <div class="col-md-4 mb-20">
-            <a asp-controller="home" asp-action="PolicyOfCompany" class="card-box d-block mx-auto pd-20 text-secondary">
-                <div class="img pb-30">
-                    <img src="~/assets/admin/vendors/images/remedy-amico.svg" alt="">
-                </div>
-                <div class="content">
-                    <h3 class="h4">Medications</h3>
-                    <p class="max-width-200 ">Look for prescription and over-the-counter drug information.</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 mb-20">
-            <a asp-controller="home" asp-action="PolicyOfCompany" class="card-box d-block mx-auto pd-20 text-secondary">
-                <div class="img pb-30">
-                    <img src="~/assets/admin/vendors/images/paper-map-cuate.svg" alt="">
-                </div>
-                <div class="content">
-                    <h3 class="h4">Locations</h3>
-                    <p class="max-width-200 ">Convenient locations when and where you need them.</p>
-                </div>
-            </a>
-        </div>
+        }
     </div>
 </div>
 

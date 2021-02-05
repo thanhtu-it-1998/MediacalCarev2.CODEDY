@@ -1,6 +1,12 @@
 ﻿using MedialCare.Areas.Account.Controllers;
 using MedialCare.Models;
+using MedialCare.Models.Catalog;
+using MedialCare.Models.Data.Entities;
+using MedialCare.Models.EF;
+using MedialCare.Models.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -10,28 +16,65 @@ using System.Threading.Tasks;
 
 namespace MedialCare.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public readonly ApplicationDbContext context;
+        public int PageSize = 5;
+        public HomeController(ApplicationDbContext _context)
         {
-            _logger = logger;
+            context = _context;
         }
-
         public IActionResult Index()
         {
-            return View();
+            var companys = context.Companys.ToList();
+            return View(companys);
+        }
+        [HttpGet]
+        public IActionResult PolicyOfCompany(int ID, string keySearch, int page = 1)
+        {
+            var query = from p in context.Policys select new { p };
+
+            if (keySearch != null)
+            {
+                query = query.Where(x => x.p.Name.Contains(keySearch));
+            }
+            var info = new RequetModel
+            {
+                Policies = query.Select(x => new Policy
+                {
+                    ID = x.p.ID,
+                    Name = x.p.Name,
+                    Description = x.p.Description,
+                    Amount = x.p.Amount,
+                    Emi = x.p.Emi,
+                }).Where(x => x.ID == ID)
+                .OrderBy(x => x.ID)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize).ToList(),
+                PagingModel = new PagingModel
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = context.Policys.Count()
+                },
+                Company = context.Companys.Find(ID),
+                Key = (keySearch != null) ? keySearch : null
+
+            };
+            return View(info);
         }
 
-        public IActionResult PolicyOfCompany()
+        public IActionResult PolicyHandl(int ID)
         {
-            return View();
-        }
-
-        public IActionResult PolicyDetail()
-        {
-            return View();
+            RequestPolicy request = new RequestPolicy()
+            {
+                PolicyID = ID,
+                UserID= (int)HttpContext.Session.GetInt32("IDSession"),
+            };
+            context.RequestPolicies.Add(request);
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
