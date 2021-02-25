@@ -18,7 +18,7 @@
                     <form asp-area="Account" asp-action="Login" asp-controller="Login" method="post">
                         @Html.AntiForgeryToken()
                         <div asp-validation-summary="ModelOnly"  class="text-danger mb-1"></div>
-                        <div class="select-role">
+                        @*<div class="select-role">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn active">
                                     <input type="radio" name="Level" id="admin" value="Admin">
@@ -33,7 +33,7 @@
                                     Employee
                                 </label>
                             </div>
-                        </div>
+                        </div>*@
                         <div class="input-group custom">
                             <input type="text" class="form-control form-control-lg" asp-for="UserName" placeholder="Username">
                             <div class="input-group-append custom">

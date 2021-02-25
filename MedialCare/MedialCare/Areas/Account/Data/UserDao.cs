@@ -19,7 +19,7 @@ namespace MedialCare.Areas.Account.Data
 
         public bool Login(string userName, string password, Level level)
         {
-            var res = context.Users.Where(x => x.Username == userName && x.Password == password && x.Level == level ).Count();
+            var res = context.Users.Where(x => x.Username == userName && x.Password == password).Count();
             if (res > 0) return true;
             else return false;
         }

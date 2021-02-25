@@ -41,7 +41,7 @@ namespace MedialCare.Areas.Account.Controllers
                     var user = dao.GetByID(model.UserName);
                     HttpContext.Session.SetString(UserSession, user.Username);
                     HttpContext.Session.SetInt32(IDSession, user.ID);
-                    if (model.Level == Level.Admin)
+                    if (user.Level == Level.Admin)
                     {
                         return RedirectToAction("Index", "Home", new { area = "Admin" });
                     }
