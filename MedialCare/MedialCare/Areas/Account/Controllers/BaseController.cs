@@ -14,12 +14,12 @@ namespace MedialCare.Areas.Account.Controllers
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            var session = HttpContext.Session.GetString("UserSession");
-            if (session == null)
-            {
-                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { controller = "Login", action = "Index", area = "Account" }));
-            }
-            base.OnActionExecuting(filterContext);
+            //var session = HttpContext.Session.GetString("UserSession");
+            //if (session == null)
+            //{
+            //    filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { controller = "Login", action = "Index", area = "Account" }));
+            //}
+            //base.OnActionExecuting(filterContext);
         }
     }
 }
