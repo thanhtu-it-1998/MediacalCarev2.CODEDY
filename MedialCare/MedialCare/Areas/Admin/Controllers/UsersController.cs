@@ -40,6 +40,7 @@ namespace MedialCare.Areas.Admin.Controllers
                     FirstName = x.u.FirstName,
                     LastName=x.u.LastName,
                     Email = x.u.Email,
+                    Level=x.u.Level,
                     Gender = x.u.Gender,
                     Address = x.u.Address,
                     Phone = x.u.Phone,
