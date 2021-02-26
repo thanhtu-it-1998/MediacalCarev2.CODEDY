@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace MedialCare.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class FeedBacksController : BaseController
+    public class FeedBacksController : CheckAccountController
     {
 
         private readonly ApplicationDbContext _context;

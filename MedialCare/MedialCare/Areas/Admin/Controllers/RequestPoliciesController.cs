@@ -1,4 +1,5 @@
-﻿using MedialCare.Areas.Admin.Models.Common;
+﻿using MedialCare.Areas.Account.Controllers;
+using MedialCare.Areas.Admin.Models.Common;
 using MedialCare.Models.EF;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace MedialCare.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class RequestPoliciesController : Controller
+    public class RequestPoliciesController : CheckAccountController
     {
         public readonly ApplicationDbContext _context;
         public RequestPoliciesController(ApplicationDbContext context)
