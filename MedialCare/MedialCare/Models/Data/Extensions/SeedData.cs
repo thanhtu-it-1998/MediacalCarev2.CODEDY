@@ -201,32 +201,32 @@ namespace MedialCare.Models.Extensions
                 {
                     ID=1,
                     CompanyId=1,
-                    Name="Chinh sach cho nhan vien moi vao cong ty",
-                    Description="Chinh sach nay danh cho nhung nhan vien moi vao cong ty, duoc ho tro tu phia cong ty len den 50%. Thoi han dang ky ke tu ngay hom nay",
+                    Name= "Policy for new employees to enter the company",
+                    Description= "This policy is for the new employees to enter the company, which are included in the company up to 50%. Time to register from today",
                     Amount=678,
                     Emi=67,
                 },new Policy()
                 {
                     ID=2,
                     CompanyId=1,
-                    Name="Nhan vien lam viec tu 10 nam tro len trong cong ty",
-                    Description="Nhung nhan vien lam tu 10 nam tro len trong cong ty thi se duoc cong ty chi tra tien bao hiem toan phan. Gio han trong vong 20 nam",
+                    Name= "Employees working for 10 years in the company",
+                    Description= "Employees who are 10 years old in the company will be paid full compensation by the company. Time limit for 20 years",
                     Amount=498,
                     Emi=12,
                 },new Policy()
                 {
                     ID=3,
                     CompanyId=3,
-                    Name="Bao hiem xa hoi",
-                    Description="Bao hiem xa hoi la mot nghi vu va trach nhieu cua moi nguoi dan, Neu ban thuc hien bao hiem xa hoi trong vong 20 nam thi ban se nhan duoc mot goi troi cap sau khi ket thuc.",
+                    Name= "How far away",
+                    Description= "As long as it is a service and a lot of people, if you realize the distance of 20 years, you will receive a call after finishing..",
                     Amount=498,
                     Emi=12,
                 },new Policy()
                 {
                     ID=4,
                     CompanyId=2,
-                    Name="Yeu tien cho nguoi trung tien",
-                    Description="Chinh sach yeu tien chon nguoi trung tien mac cac benh ve suong khop. Khach hang co the huong duoc cac goi tri lieu hoan toan mien phi trong suoc thoi gian su dung dich vu cua chung toi",
+                    Name= "Money for the middle man",
+                    Description= "Money love policy for middle-aged people with health problems. Customers can receive free legal calls within the duration of our service.",
                     Amount=498,
                     Emi=12,
                 });
