@@ -13,6 +13,7 @@
                 <th>Policies</th>
                 <th>User</th>
                 <th>Date</th>
+                <th>Status</th>
                 <th class="datatable-nosort">Delete</th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                     <td>
                         @item.Date
                     </td>
+                    <td>@item.Status</td>
                     <td>
                         <a asp-area="Admin" asp-controller="RequestPolicies" asp-action="Delete" asp-route-id="@item.ID" data-color="#e95959" class="font-20" title="Delete"><i class="icon-copy dw dw-delete-3"></i></a>
                     </td>

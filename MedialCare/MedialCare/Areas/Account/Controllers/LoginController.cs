@@ -17,6 +17,7 @@ namespace MedialCare.Areas.Account.Controllers
         const string UserSession = "UserSession";
 
         const string IDSession = "IDSession";
+        const string LevelSession = "LevelSession";
 
         public ApplicationDbContext context;
 
@@ -43,10 +44,12 @@ namespace MedialCare.Areas.Account.Controllers
                     HttpContext.Session.SetInt32(IDSession, user.ID);
                     if (user.Level == Level.Admin)
                     {
+                        HttpContext.Session.SetString(LevelSession, "Admin");
                         return RedirectToAction("Index", "Home", new { area = "Admin" });
                     }
                     else
                     {
+                        HttpContext.Session.SetString(LevelSession, "Employee");
                         return RedirectToAction("Index", "Home", new { area = "" });
 
                     }

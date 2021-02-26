@@ -18,22 +18,6 @@
                     <form asp-area="Account" asp-action="Login" asp-controller="Login" method="post">
                         @Html.AntiForgeryToken()
                         <div asp-validation-summary="ModelOnly"  class="text-danger mb-1"></div>
-                        @*<div class="select-role">
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn active">
-                                    <input type="radio" name="Level" id="admin" value="Admin">
-                                    <div class="icon"><img src="~/assets/admin/vendors/images/briefcase.svg" class="svg" alt=""></div>
-                                    <span>I'm</span>
-                                    Manager
-                                </label>
-                                <label class="btn">
-                                    <input type="radio" name="Level" id="user" value="Employee">
-                                    <div class="icon"><img src="~/assets/admin/vendors/images/person.svg" class="svg" alt=""></div>
-                                    <span>I'm</span>
-                                    Employee
-                                </label>
-                            </div>
-                        </div>*@
                         <div class="input-group custom">
                             <input type="text" class="form-control form-control-lg" asp-for="UserName" placeholder="Username">
                             <div class="input-group-append custom">
@@ -48,7 +32,7 @@
                             </div>
                         </div>
                         <span asp-validation-for="Password" class="text-danger"></span>
-                        <div class="row pb-30">
+                        @*<div class="row pb-30">
                             <div class="col-6">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" name="RememberMe" id="customCheck1">
@@ -58,7 +42,7 @@
                             <div class="col-6">
                                 <div class="forgot-password"><a href="forgot-password.html">Forgot Password</a></div>
                             </div>
-                        </div>
+                        </div>*@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="input-group mb-0">
