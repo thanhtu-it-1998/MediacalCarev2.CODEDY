@@ -12,6 +12,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="~/assets/admin/vendors/images/logo-medical.png">
     <link rel="icon" type="image/png" sizes="16x16" href="~/assets/admin/vendors/images/logo-medical.png">
 
+    @*Dialog Jqiery*@
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -23,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="~/assets/admin/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="~/assets/admin/src/plugins/datatables/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="~/assets/admin/vendors/styles/style.css">
-
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
     <script>
@@ -40,7 +45,7 @@
         <div class="header-left">
             <div class="menu-icon dw dw-menu"></div>
             <div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
-           
+
         </div>
         <div class="header-right">
             <div class="dashboard-setting user-notification">
@@ -204,7 +209,7 @@
         <div class="brand-logo">
             <a asp-controller="Home" asp-action="Index">
                 @*<img src="~/assets/admin/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">*@
-                <img src="~/assets/admin/vendors/images/medical-brand.png" alt="" class="light-logo" >
+                <img src="~/assets/admin/vendors/images/medical-brand.png" alt="" class="light-logo">
             </a>
             <div class="close-sidebar" data-toggle="left-sidebar-close">
                 <i class="ion-close-round"></i>
@@ -253,6 +258,7 @@
 
     </div>
     <!-- js -->
+
     <script src="~/assets/admin/vendors/scripts/core.js"></script>
     <script src="~/assets/admin/vendors/scripts/script.min.js"></script>
     <script src="~/assets/admin/vendors/scripts/process.js"></script>
@@ -262,6 +268,7 @@
     <script src="~/assets/admin/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
     <script src="~/assets/admin/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
     <script src="~/assets/admin/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
