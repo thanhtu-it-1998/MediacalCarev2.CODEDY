@@ -2,6 +2,7 @@
 using MedialCare.Areas.Admin.Models.Common;
 using MedialCare.Models.EF;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,15 @@ namespace MedialCare.Areas.Admin.Controllers
             _context.RequestPolicies.Remove(feedback);
             _context.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public IActionResult ChangeStatus(int ID)
+        {
+            var res = _context.RequestPolicies.Where(x=>x.ID == ID).FirstOrDefault();
+            res.Status = MedialCare.Models.Enum.Status.Approval;
+            _context.Entry(res).State = EntityState.Modified;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+
         }
     }
 }

@@ -12,11 +12,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="~/assets/admin/vendors/images/logo-medical.png">
     <link rel="icon" type="image/png" sizes="16x16" href="~/assets/admin/vendors/images/logo-medical.png">
 
-    @*Dialog Jqiery*@
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-
-
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -28,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="~/assets/admin/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="~/assets/admin/src/plugins/datatables/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="~/assets/admin/vendors/styles/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
     <script>
@@ -55,62 +50,7 @@
                     </a>
                 </div>
             </div>
-            <div class="user-notification">
-                <div class="dropdown">
-                    <a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
-                        <i class="icon-copy dw dw-notification"></i>
-                        <span class="badge notification-active"></span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <div class="notification-list mx-h-350 customscroll">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <img src="~/assets/admin/vendors/images/img.jpg" alt="">
-                                        <h3>John Doe</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="~/assets/admin/vendors/images/photo1.jpg" alt="">
-                                        <h3>Lea R. Frith</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="~/assets/admin/vendors/images/photo2.jpg" alt="">
-                                        <h3>Erik L. Richards</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="~/assets/admin/vendors/images/photo3.jpg" alt="">
-                                        <h3>John Doe</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="~/assets/admin/vendors/images/photo4.jpg" alt="">
-                                        <h3>Renee I. Hansen</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="~/assets/admin/vendors/images/img.jpg" alt="">
-                                        <h3>Vicki M. Coleman</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @await Component.InvokeAsync("UserNotification")
             <div class="user-info-dropdown">
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -208,7 +148,7 @@
     <div class="left-side-bar">
         <div class="brand-logo">
             <a asp-controller="Home" asp-action="Index">
-                @*<img src="~/assets/admin/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">*@
+                @*<img src="~/assets/admin/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">*@<img src="~/assets/admin/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
                 <img src="~/assets/admin/vendors/images/medical-brand.png" alt="" class="light-logo">
             </a>
             <div class="close-sidebar" data-toggle="left-sidebar-close">
@@ -258,7 +198,6 @@
 
     </div>
     <!-- js -->
-
     <script src="~/assets/admin/vendors/scripts/core.js"></script>
     <script src="~/assets/admin/vendors/scripts/script.min.js"></script>
     <script src="~/assets/admin/vendors/scripts/process.js"></script>
@@ -268,7 +207,6 @@
     <script src="~/assets/admin/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
     <script src="~/assets/admin/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
     <script src="~/assets/admin/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-
     @RenderSection("scripts", required: false)
 </body>
 </html>
