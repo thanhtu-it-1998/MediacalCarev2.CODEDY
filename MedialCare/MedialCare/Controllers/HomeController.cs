@@ -31,7 +31,7 @@ namespace MedialCare.Controllers
             return View(companys);
         }
         [HttpGet]
-        public IActionResult PolicyOfCompany(int ID, string keySearch, int page = 1)
+        public IActionResult PolicyOfCompany(int Id, string keySearch, int page = 1)
         {
             var query = from p in context.Policys select new { p };
 
@@ -48,7 +48,8 @@ namespace MedialCare.Controllers
                     Description = x.p.Description,
                     Amount = x.p.Amount,
                     Emi = x.p.Emi,
-                }).Where(x => x.ID == ID)
+                    CompanyId = Id
+                }).Where(x => x.CompanyId == Id)
                 .OrderBy(x => x.ID)
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize).ToList(),
@@ -58,7 +59,7 @@ namespace MedialCare.Controllers
                     ItemsPerPage = PageSize,
                     TotalItems = context.Policys.Count()
                 },
-                Company = context.Companys.Find(ID),
+                Company = context.Companys.Find(Id),
                 Key = (keySearch != null) ? keySearch : null
 
             };

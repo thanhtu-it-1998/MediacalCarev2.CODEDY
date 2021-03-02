@@ -11,7 +11,7 @@ namespace MedialCare.Models.Catalog
         public IEnumerable<Policy> Policies { get; set; }
         public Company Company { get; set; }
         public PagingModel PagingModel { get; set; }
-         
+        public int CompnayId { get; set; } 
         public string Key { get; set; }
     }
 }
