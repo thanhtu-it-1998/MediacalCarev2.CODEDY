@@ -44,7 +44,7 @@
                     @Html.DisplayFor(modelItem => item.Content)
                 </td>
                 <td>
-                    <a asp-area="Admin" asp-controller="Feedbacks" asp-action="Delete" asp-route-id="@item.ID" data-color="#e95959" class="font-20" title="Delete"><i class="icon-copy dw dw-delete-3"></i></a>
+                    <a asp-area="Admin" asp-controller="Feedbacks" asp-action="Delete" asp-route-id="@item.ID" data-color="#e95959" onclick ="alert('You submitted the feed back successfully')" class="font-20" title="Delete"><i class="icon-copy dw dw-delete-3"></i></a>
                 </td>
             </tr>
             }
