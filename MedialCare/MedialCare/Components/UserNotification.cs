@@ -32,11 +32,15 @@ namespace MedialCare.Components
                 User = x.u.Username,
                 Date = x.r.CreatedAt,
                 Status = x.r.Status
-            }).Where(x => x.Status == Status.Approval).ToList();
+            }).ToList();
 
           
             ViewBag.Count = res.Count();
             return View(res);
         }
+        //public IViewComponentResult DeteleResquest()
+        //{
+
+        //}
     }
 }
