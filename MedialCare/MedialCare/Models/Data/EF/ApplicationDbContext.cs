@@ -12,8 +12,6 @@ namespace MedialCare.Models.EF
 {
     public class ApplicationDbContext : DbContext
     {
-
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
@@ -24,6 +22,7 @@ namespace MedialCare.Models.EF
         public DbSet<Policy> Policys { get; set; }
         public DbSet<FeedBack> Feedbacks { get; set; }
         public DbSet<RequestPolicy> RequestPolicies { get; set; }
+        public DbSet<EmailFormModel> EmailFormModels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +34,7 @@ namespace MedialCare.Models.EF
             modelBuilder.ApplyConfiguration(new PolicyOnEmployeeConfiguration());
             modelBuilder.ApplyConfiguration(new RequestPolicyConfiguration());
             modelBuilder.ApplyConfiguration(new FeedBackConfiguration());
+            modelBuilder.ApplyConfiguration(new EmailFormModelConfiguration());
             // Seed Database
             modelBuilder.Seed();
         }

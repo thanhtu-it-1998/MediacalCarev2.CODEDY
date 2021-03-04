@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Net;
 using MedialCare.Models.Data.Entities;
+using MedialCare.Models.Entities;
 
 namespace MedialCare.Areas.Admin.Controllers
 {
@@ -67,38 +68,15 @@ namespace MedialCare.Areas.Admin.Controllers
             _context.Entry(res).State = EntityState.Modified;
             _context.SaveChanges();
 
-            if (!ModelState.IsValid) return RedirectToAction("Index");
-            //try
-            //{
-            //    MailMessage mail = new MailMessage();
-            //    mail.From = new MailAddress("phamtuancules20@gmail.com");
-            //    mail.To.Add("tuanpth1908045@fpt.edu.vn");
-            //    mail.IsBodyHtml = true;
-            //    string content = "Name: " + emailFormModel.FromName;
-            //    content += "</br> Message: " + emailFormModel.Message;
-
-            //    mail.Body = content;
-
-            //    SmtpClient smtpClient = new SmtpClient("abc.simax.com");
-            //    NetworkCredential netWorkCredential = new NetworkCredential("phamtuancules20@gmail.com", "Pham30052017@");
-            //    smtpClient.UseDefaultCredentials = false;
-            //    smtpClient.Credentials = netWorkCredential;
-            //    smtpClient.Port = 25;
-            //    smtpClient.EnableSsl = false;
-            //    smtpClient.Send(mail);
-
-            //    ViewBag.Message = "Mail Send";
-            //    ModelState.Clear();
-            //}
             try
             {
-                //EmailFormModel emailform = new EmailFormModel();
-                string to = "nguyenhoangminh26a@gmail.com";
-                string subject = "Tuan test mail";
-                string body = "Hello World!";
+                var info = _context.RequestPolicies.Where(x => x.ID == ID).FirstOrDefault();
+                var toEmail = _context.Users.Where(x => x.ID == info.UserID).FirstOrDefault().Email;
+                var subject = _context.Policys.Where(x => x.ID == info.PolicyID).FirstOrDefault().Name;
+                var body = _context.Policys.Where(x => x.ID == info.PolicyID).FirstOrDefault().Description;
 
                 MailMessage mail = new MailMessage();
-                mail.To.Add(to);
+                mail.To.Add(toEmail);
                 mail.Subject = subject;
                 mail.Body = body;
                 mail.From = new MailAddress("tuan20pham@gmail.com");

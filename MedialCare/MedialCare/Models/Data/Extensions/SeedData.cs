@@ -26,8 +26,9 @@ namespace MedialCare.Models.Extensions
                     Level = Level.Admin,
                     Phone = "0359077335",
                     Salary = 230,
-                    Image= "133690010_890302931723740_4897017713202137858_o.jpg"
-                },  new User()
+                    Image = "133690010_890302931723740_4897017713202137858_o.jpg"
+                },
+                new User()
                 {
                     ID = 2,
                     FirstName = " Van A",
@@ -42,7 +43,7 @@ namespace MedialCare.Models.Extensions
                     Level = Level.Employee,
                     Phone = "0367376544",
                     Salary = 254,
-                    Image= ""
+                    Image = ""
 
                 },
                  new User()
@@ -60,7 +61,7 @@ namespace MedialCare.Models.Extensions
                      Level = Level.Admin,
                      Phone = "98372837362",
                      Salary = 265,
-                     Image= "120276334_1294841180852265_978321052909351337_o.jpg"
+                     Image = "120276334_1294841180852265_978321052909351337_o.jpg"
 
                  },
                  new User()
@@ -78,9 +79,11 @@ namespace MedialCare.Models.Extensions
                      Level = Level.Admin,
                      Phone = "98372837362",
                      Salary = 265,
-                     Image= "120812760_1010459009465475_90927199314198547_o.jpg"
+                     Image = "120812760_1010459009465475_90927199314198547_o.jpg"
 
-                 },new User {
+                 },
+                 new User
+                 {
                      ID = 5,
                      FirstName = "Thi Chan Hoa",
                      LastName = "Do",
@@ -94,8 +97,10 @@ namespace MedialCare.Models.Extensions
                      Level = Level.Admin,
                      Phone = "98372837362",
                      Salary = 265,
-                     Image= "46224173_533702767097372_931079331302604800_n.jpg"
-                 },new User {
+                     Image = "46224173_533702767097372_931079331302604800_n.jpg"
+                 },
+                 new User
+                 {
                      ID = 6,
                      FirstName = "Dinh Hieu",
                      LastName = "Nguyen ",
@@ -109,9 +114,10 @@ namespace MedialCare.Models.Extensions
                      Level = Level.Admin,
                      Phone = "98372837362",
                      Salary = 265,
-                     Image= "133650886_3739659902806749_1154799049283951510_o.jpg"
+                     Image = "133650886_3739659902806749_1154799049283951510_o.jpg"
                  },
-                 new User {
+                 new User
+                 {
                      ID = 7,
                      FirstName = "Chau",
                      LastName = "Bui ",
@@ -126,7 +132,24 @@ namespace MedialCare.Models.Extensions
                      Phone = "98372837362",
                      Salary = 265
                  },
-                 new User {
+                 new User
+                 {
+                     ID = 9,
+                     FirstName = "Tuan",
+                     LastName = "Pham ",
+                     Address = "Thai Nguyen",
+                     Username = "tuanpham20",
+                     Password = "123456",
+                     Designation = "Employee",
+                     Email = "phamtuancules20@gmail.com",
+                     Gender = Gender.Male,
+                     JoinDate = DateTime.Parse("01-03-2002"),
+                     Level = Level.Employee,
+                     Phone = "98372837362",
+                     Salary = 20
+                 },
+                 new User
+                 {
                      ID = 8,
                      FirstName = "Ba Long",
                      LastName = "Cao",
@@ -141,6 +164,30 @@ namespace MedialCare.Models.Extensions
                      Phone = "98372837362",
                      Salary = 265,
                  }
+                );
+            modelBuilder.Entity<EmailFormModel>().HasData(
+                new EmailFormModel()
+                {
+                    ID = 1,
+                    UserID = 9,
+                    PolicyID = 1,
+                    Status = Status.Request
+                },
+                new EmailFormModel()
+                {
+                ID = 2,
+                    UserID = 1,
+                    PolicyID = 2,
+                    Status = Status.Request
+                },
+                new EmailFormModel()
+                {
+                ID = 3,
+                    UserID = 3,
+                    PolicyID = 3,
+                    Status = Status.Request
+                }
+
                 );
             modelBuilder.Entity<Company>().HasData(
 
@@ -281,36 +328,39 @@ namespace MedialCare.Models.Extensions
             modelBuilder.Entity<Policy>().HasData(
                 new Policy()
                 {
-                    ID=1,
-                    CompanyId=1,
-                    Name= "Policy for new employees to enter the company",
-                    Description= "This policy is for the new employees to enter the company, which are included in the company up to 50%. Time to register from today",
-                    Amount=678,
-                    Emi=67,
-                },new Policy()
+                    ID = 1,
+                    CompanyId = 1,
+                    Name = "Policy for new employees to enter the company",
+                    Description = "This policy is for the new employees to enter the company, which are included in the company up to 50%. Time to register from today",
+                    Amount = 678,
+                    Emi = 67,
+                },
+                new Policy()
                 {
-                    ID=2,
-                    CompanyId=1,
-                    Name= "Employees working for 10 years in the company",
-                    Description= "Employees who are 10 years old in the company will be paid full compensation by the company. Time limit for 20 years",
-                    Amount=498,
-                    Emi=12,
-                },new Policy()
+                    ID = 2,
+                    CompanyId = 1,
+                    Name = "Employees working for 10 years in the company",
+                    Description = "Employees who are 10 years old in the company will be paid full compensation by the company. Time limit for 20 years",
+                    Amount = 498,
+                    Emi = 12,
+                },
+                new Policy()
                 {
-                    ID=3,
-                    CompanyId=1,
-                    Name= "Employees working for 10 years in the company",
-                    Description= "Employees who are 10 years old in the company will be paid full compensation by the company. Time limit for 20 years",
-                    Amount=498,
-                    Emi=12,
-                },new Policy()
+                    ID = 3,
+                    CompanyId = 1,
+                    Name = "Employees working for 10 years in the company",
+                    Description = "Employees who are 10 years old in the company will be paid full compensation by the company. Time limit for 20 years",
+                    Amount = 498,
+                    Emi = 12,
+                },
+                new Policy()
                 {
-                    ID=4,
-                    CompanyId=2,
-                    Name= "Finibus Bonorum et Malorum",
-                    Description= "Our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur",
-                    Amount=675,
-                    Emi=124,
+                    ID = 4,
+                    CompanyId = 2,
+                    Name = "Finibus Bonorum et Malorum",
+                    Description = "Our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur",
+                    Amount = 675,
+                    Emi = 124,
                 },
                 new Policy()
                 {
@@ -346,7 +396,7 @@ namespace MedialCare.Models.Extensions
                        Name = "This book is a treatise on the theory of ethics,",
                        Description = "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33",
                        Amount = 330,
-                       Emi =40,
+                       Emi = 40,
                    },
                    new Policy()
                    {
@@ -474,7 +524,7 @@ namespace MedialCare.Models.Extensions
                                  Amount = 564,
                                  Emi = 45,
                              },
-                             
+
                                new Policy()
                                {
                                    ID = 23,
@@ -537,7 +587,8 @@ namespace MedialCare.Models.Extensions
                                        Description = " At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
                                        Amount = 585,
                                        Emi = 130,
-                                   }, new Policy()
+                                   },
+                                   new Policy()
                                    {
                                        ID = 30,
                                        CompanyId = 7,
@@ -789,7 +840,7 @@ namespace MedialCare.Models.Extensions
                                                             Amount = 489,
                                                             Emi = 178,
                                                         });
-                                      
+
 
 
         }

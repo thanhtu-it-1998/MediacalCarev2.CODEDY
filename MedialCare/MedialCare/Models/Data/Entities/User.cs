@@ -1,4 +1,5 @@
-﻿using MedialCare.Models.Enum;
+﻿using MedialCare.Models.Data.Entities;
+using MedialCare.Models.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -59,6 +60,7 @@ namespace MedialCare.Models.Entities
         public bool Deleted { get; set; }
 
         public List<PolicyOnEmployee> PolicyOnEmployees { get; set; }
+        public List<EmailFormModel> EmailFromModels { get; set; }
 
     }
 }
