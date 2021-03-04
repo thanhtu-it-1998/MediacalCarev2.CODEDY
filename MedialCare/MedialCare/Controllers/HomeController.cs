@@ -83,5 +83,29 @@ namespace MedialCare.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        [HttpGet]
+        public IActionResult Pay(int Id)
+        {
+            if(Id == null && Id == 0)
+            {
+                throw new Exception();
+            }
+            var query = from c in context.Companys
+                        join p in context.Policys on c.ID equals p.CompanyId
+                        where(p.ID == Id)
+                        select new { c, p };
+            var info = query.Select(x => new RequestPay
+            {
+                CompanyName = x.c.Name,
+                ID = x.p.ID,
+                Name = x.p.Name,
+                Description = x.p.Description,
+                Amount = x.p.Amount,
+                Emi = x.p.Emi,
+            }).FirstOrDefault();
+            return View(info);
+        }
     }
 }
